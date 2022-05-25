@@ -14,39 +14,20 @@ export function useShoppingCart() {
     count: number;
   }) => {
     // console.log(count, product);
-    // console.log(count);
+    console.log(count);
 
     setShoppingCart((oldShoppingCard) => {
-      const productInCart: ProductInCart = oldShoppingCard[product.id] || {
-        ...product,
-        count: 0,
-      };
-
-      // agregar producto
-      if (Math.max(productInCart.count + count, 0) > 0) {
-        productInCart.count += count;
-
-        return {
-          ...oldShoppingCard,
-          [product.id]: productInCart,
-        };
+      if (count === 0) {
+        // Mezcla entre desestructuracion, propiedades computadas y el operador rest
+        // Busca el elemento a retirar y devuelve el resto
+        const { [product.id]: toDelete, ...rest } = oldShoppingCard;
+        return rest;
       }
 
-      // borrar producto
-      const { [product.id]: toDelete, ...rest } = oldShoppingCard;
-      return rest;
-
-      //   if (count === 0) {
-      //     // Mezcla entre desestructuracion, propiedades computadas y el operador rest
-      //     // Busca el elemento a retirar y devuelve el resto
-      //     const { [product.id]: toDelete, ...rest } = oldShoppingCard;
-      //     return rest;
-      //   }
-
-      //   return {
-      //     ...oldShoppingCard,
-      //     [product.id]: { ...product, count },
-      //   };
+      return {
+        ...oldShoppingCard,
+        [product.id]: { ...product, count },
+      };
     });
   };
 
