@@ -4,29 +4,35 @@ import { Props as ProductTitleProps } from "../components/ProductTitle";
 import { Props as ProductButtonsProps } from "../components/ProductButtons";
 
 export interface Product {
-  id: string;
-  title: string;
-  img?: string;
+    id: string;
+    title: string;
+    img?: string;
 }
 
 export interface ProductContextProps {
-  counter: number;
-  increaseBy: (value: number) => void;
-  product: Product;
+    counter: number;
+    increaseBy: (value: number) => void;
+    product: Product;
+    maxCount?: number;
 }
 
 export interface ProductCardHOCProps {
-  (Props: ProductCardProps): JSX.Element;
-  Image: (Props: ProductImageProps) => JSX.Element;
-  Title: (Props: ProductTitleProps) => JSX.Element;
-  Buttons: (Props: ProductButtonsProps) => JSX.Element;
+    (Props: ProductCardProps): JSX.Element;
+    Image: (Props: ProductImageProps) => JSX.Element;
+    Title: (Props: ProductTitleProps) => JSX.Element;
+    Buttons: (Props: ProductButtonsProps) => JSX.Element;
 }
 
 export interface onChangeArgs {
-  product: Product;
-  count: number;
+    product: Product;
+    count: number;
 }
 
 export interface ProductInCart extends Product {
-  count: number;
+    count: number;
+}
+
+export interface InitialValues {
+    count?: number;
+    maxCount?: number;
 }
