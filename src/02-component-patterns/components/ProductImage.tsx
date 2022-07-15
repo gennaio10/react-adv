@@ -4,13 +4,8 @@ import styles from "../styles/styles.module.css";
 import { ProductContext } from "./ProductCard";
 
 export const ProductImage = ({ img = "" }) => {
-  const { product } = useContext(ProductContext);
+    // AQUI USAMOS EL CONTEXT QUE NOS COMPARTE EL PADRE "ProductCard"
+    const { product } = useContext(ProductContext);
 
-  return (
-    <img
-      className={styles.productImg}
-      src={img || product.img || noImage}
-      alt="Product"
-    />
-  );
+    return <img className={styles.productImg} src={img || product.img || noImage} alt="Product" />;
 };
