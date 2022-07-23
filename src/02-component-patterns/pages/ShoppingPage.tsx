@@ -28,6 +28,7 @@ export const ShoppingPage = () => {
                         key={product.id}
                         product={product}
                         className="bg-dark text-white"
+                        //  CONTROL PROPS
                         // "onProductCountChange" ES LA FUNCION QUE CAMBIA EL STATE
                         onChange={onProductCountChange}
                         // SI EL PRODUCTO EXISTE "?" USA EL "count" de lo contrario "0"
@@ -52,6 +53,7 @@ export const ShoppingPage = () => {
                         product={product}
                         className="bg-dark text-white"
                         style={{ width: "100px" }}
+                        //  CONTROL PROPS
                         // SI SE PONE AQUI LE ENVIAMOS LA FUNCION QUE CAMBIA EL STATE
                         // "onProductCountChange" ES LA FUNCION QUE CAMBIA EL STATE
                         onChange={onProductCountChange}
