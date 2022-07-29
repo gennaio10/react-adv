@@ -21,7 +21,7 @@ export const ShoppingPage = () => {
                     flexWrap: "wrap",
                 }}
             >
-                <ProductCard product={product}>
+                {/* <ProductCard product={product}>
                     <ProductImage />
                     <ProductTitle />
                     <ProductButtons />
@@ -43,7 +43,7 @@ export const ShoppingPage = () => {
                     <ProductCard.Image className="custom-image" />
                     <ProductCard.Title className="text-bold" />
                     <ProductCard.Buttons className="custom-button" />
-                </ProductCard>
+                </ProductCard> */}
 
                 <ProductCard product={product} className="bg-dark text-white">
                     <ProductImage className="custom-image" />
@@ -51,12 +51,7 @@ export const ShoppingPage = () => {
                     <ProductButtons className="custom-button" />
                 </ProductCard>
 
-                <ProductCard
-                    product={product}
-                    style={{
-                        backgroundColor: "#70D1F8",
-                    }}
-                >
+                <ProductCard product={product} style={{ backgroundColor: "#70D1F8" }}>
                     <ProductImage
                         style={{
                             boxShadow: "10px 10px 10px rgba(0,0,0,0.2)",
