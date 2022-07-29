@@ -19,8 +19,8 @@ export const ShoppingPage = () => {
                 }}
             >
                 <ProductCard product={product}>
-                    <ProductImage />
                     <ProductTitle />
+                    <ProductImage />
                     <ProductButtons />
                 </ProductCard>
 

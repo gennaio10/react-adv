@@ -17,10 +17,8 @@ export const ProductCard = ({ children, product }: ProductCardProps) => {
         // CON ESTO TODOS PUEDEN USAR LO QUE ESTE EN EL CONTEXT MEDIANTE EL HOOK USECONTEXT
         <Provider value={{ counter, increaseBy, product }}>
             <div className={styles.productCard}>
+                {/* HIJOS  */}
                 {children}
-                {/* <ProductImage img={product.img} />
-      <ProductTitle title={product.title} />
-      <ProductButtons counter={counter} increaseBy={increaseBy} /> */}
             </div>
         </Provider>
     );
