@@ -28,7 +28,7 @@ export function useProduct({ product, onChange, value = 0 }: useProductArgs) {
 
         if (isControlled.current) {
             // AGREGARMOS EL "!" YA QUE EL onChange, LO ESTAMSO VALIDANDO ARRIBA PERO ARROJA EL ERROR Y/O WARNING
-            // CON ESTE LE DECIMOS A typescript "confia en mi" :)
+            // CON ESTE "!" LE DECIMOS A typescript "confia en mi" :)
             return onChange!({ product, count: value });
         }
 
@@ -46,7 +46,7 @@ export function useProduct({ product, onChange, value = 0 }: useProductArgs) {
     };
 
     // SEA O NO CONTROLADO IGUAL TAMBIEN SE MANTIENE EL ESTADO DENTRO DEL COMPONENTE
-    // PARA REDIBUJAR LOS CAMBIOS OSBRE EL COMPONENTE
+    // PARA REDIBUJAR LOS CAMBIOS SOBRE EL COMPONENTE
     // CAMBIA SIEMPRE QUE SE ACTUALIZA EL "value"
     useEffect(() => {
         setCounter(value);

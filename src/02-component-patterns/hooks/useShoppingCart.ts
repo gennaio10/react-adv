@@ -17,7 +17,7 @@ export function useShoppingCart() {
 
     // DEL EVENTO QUE ENTRA {[key: string]: ProductInCart} DESESTRUCTURAMOS
     const onProductCountChange = ({ product, count }: { product: Product; count: number }) => {
-        // conunt "1" si incremente y "-1" si decrementa
+        // conunt "1" si incrementa y "-1" si decrementa
         // console.log(count, product);
         // console.log(count);
 
