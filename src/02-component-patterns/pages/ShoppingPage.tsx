@@ -35,7 +35,6 @@ export const ShoppingPage = () => {
                         value={shoppingCart[product.id]?.count || 0}
                     >
                         <ProductImage className="custom-image" />
-                        <ProductImage className="custom-image" />
                         <ProductTitle className="text-bold" />
                         <ProductButtons className="custom-button" />
                     </ProductCard>
