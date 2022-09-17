@@ -22,12 +22,23 @@ export const ShoppingPage = () => {
                         maxCount: 10,
                     }}
                 >
-                    {(mensaje) => (
+                    {({ reset, count, increaseBy, isMaxCountReached, maxCount }) => (
                         <>
                             <ProductImage className="custom-image" />
                             <ProductTitle className="text-bold" />
                             <ProductButtons className="custom-button" />
-                            <h1>{mensaje}</h1>
+
+                            {/* RESET DEL STATE */}
+                            <button onClick={reset}>Reset</button>
+
+                            <button onClick={() => increaseBy(-2)}>-2</button>
+
+                            {/* MOSTRAR SOLO SI SE PUEDE INCREMENTAR */}
+                            {!isMaxCountReached && <button onClick={() => increaseBy(2)}>+2</button>}
+                            <br />
+                            <span>
+                                {count} / {maxCount}
+                            </span>
                         </>
                     )}
                 </ProductCard>
